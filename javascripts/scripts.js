@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function drawMap () {
   var canvasTiles = L.tileLayer.canvas();
-  var map = L.mapbox.map('map', 'fengling-.cfe0ce43').setView([19.1562, 72.7631], 11);
+  var map = L.mapbox.map('map', 'fengling-.cfe0ce43').setView([1.3148,11, 103.8036], 11);
 
   L.canvasOverlay().drawing(drawPoints).addTo(map);
 }
@@ -23,6 +23,7 @@ function drawPoints (canvasOverlay, params) {
     dot = canvasOverlay._map.latLngToContainerPoint( [d[0], d[1]] );
     ctx.lineTo(dot.x, dot.y);
   });
+  ctx.strokeStyle = 'red';
   ctx.stroke();
   
 }
